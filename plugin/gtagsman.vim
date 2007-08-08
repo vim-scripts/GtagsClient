@@ -3,9 +3,10 @@
 " File:          gtagsman.vim
 " Brief:         Manages the gtags server information for each buffer
 " Author:        Edward Leap Fox <edyfox AT gmail DOT com>
-" Last Modified: 2007-08-08 16:49:50
-" Version:       0.1
+" Last Modified: 2007-08-09 10:53:58
+" Version:       0.11
 " Thanks:        Google Inc. Gtags team
+" GetLatestVimScripts: 1983 1 :AutoInstall: GtagsClient.vba.gz
 "
 
 let g:google_tags_locations = {}
