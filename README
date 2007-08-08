@@ -1,0 +1,21 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1983
+
+Google Gtags is an extension to GNU Emacs and X-Emacs TAGS functionality, with a server-side component that narrows down the view of a potentially large TAGS file and serves the narrowed view over the wire for better performance. Google Gtags could be downloaded from http://code.google.com/p/google-gtags/ .
+
+This plugin is a Vim client to Googe Gtags. With this plugin, you could easily set up many projects in your workstation, and use different Gtags servers in different projects automatically. The only thing you should do is putting a text file named ".gtags" in the project root directory, write the servers' information in this file, one line per server. The description format is:
+
+language,type,hostname,port
+
+For example:
+
+c++,definition,my.server.org,8928
+c++,callgraph,my.server.org,8929
+python,definition,my.server.org,8930
+python,callgraph,my.server.org,8931
+
+Then when you open any files under this directory (including all sub directories), your Vim will use these servers for tags looking up.
+
+The server auto-selection doesn't work with "mixer" feature.  So if you want to use the server auto-selection feature, you should disable the mixer feature by typing ":let g:google_tags_use_mixer=0", or put the following lines in your .vimrc.
+
+" Gtags
+let g:google_tags_use_mixer=0
