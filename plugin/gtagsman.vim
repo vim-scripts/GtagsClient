@@ -1,10 +1,10 @@
 "
-" Copyright 2007, All Rights Reserved.
+" Copyright 2007-2009, All Rights Reserved.
 " File:          gtagsman.vim
 " Brief:         Manages the gtags server information for each buffer
 " Author:        Edward Leap Fox <edyfox AT gmail DOT com>
-" Last Modified: 2007-08-09 10:53:58
-" Version:       0.11
+" Last Modified: 2009-04-09 12:41:51
+" Version:       0.12
 " Thanks:        Google Inc. Gtags team
 " GetLatestVimScripts: 1983 1 :AutoInstall: GtagsClient.vba.gz
 "
@@ -92,10 +92,10 @@ function! s:BufEnter()
                 \ . "\"" . s:Escape(item[2]) . "\", "
                 \ . s:Escape(item[3]) . ")"
         endfor
-            if !has_key(g:google_tags_locations, projpath)
-                let g:google_tags_locations[projpath] = tempname()
-                call system('touch ' . g:google_tags_locations[projpath])
-            endif
+        if !has_key(g:google_tags_locations, projpath)
+            let g:google_tags_locations[projpath] = tempname()
+            call system('touch ' . g:google_tags_locations[projpath])
+        endif
         let g:google_tags = g:google_tags_locations[projpath]
         exe 'set tags+=' . g:google_tags
     else
